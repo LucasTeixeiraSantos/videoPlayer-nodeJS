@@ -4,7 +4,7 @@ const containerVideos = document.querySelector(".videos__container");
 
 async function buscarEMostrarVideos() {
   try {
-    const busca = await axios.get("http://localhost:3000/videos");
+    const busca = await axios.get("https://gist.githubusercontent.com/LucasTeixeiraSantos/21beed2c954c96c49b20011d5aee4b7a/raw/423265050f3612a870527d0566f3270fd0206fe2/gistfile1.txt");
     const videos = busca.data;
 
     videos.forEach((video) => {
@@ -15,7 +15,6 @@ async function buscarEMostrarVideos() {
                 <li class="videos__item">
                     <iframe src="${video.url}" title="${video.titulo}" frameborder="0" allowfullscreen></iframe>
                     <div class="descricao-video">
-                        <img class="img-canal" src="${video.imagem} alt="Logo do Canal">
                         <h3 class="titulo-video">${video.titulo}</h3>
                         <p class="titulo-canal">${video.descricao}</p>
                         <p class="categoria" hidden>${video.categoria}</p>
